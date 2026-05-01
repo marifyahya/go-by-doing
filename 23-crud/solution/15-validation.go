@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func validate(email string) error {
+	if email == "" {
+		return fmt.Errorf("email required")
+	}
+	return nil
+}
 
 func main() {
-	fmt.Println("Validation failed: email required")
+	err := validate("")
+	if err != nil {
+		fmt.Printf("Validation failed: %v\n", err)
+	}
 }

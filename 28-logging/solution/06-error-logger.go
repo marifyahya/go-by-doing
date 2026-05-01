@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("ERROR: failed to connect: connection refused")
+	err := fmt.Errorf("connection refused")
+	fmt.Printf("ERROR: failed to connect: %v\n", err)
 }

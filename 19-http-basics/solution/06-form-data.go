@@ -3,11 +3,14 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"net/url"
+	"net/http/httptest"
+	"strings"
 )
 
 func main() {
-	r, _ := http.NewRequest("POST", "/", nil)
-	r.Form = url.Values{"username": {"john"}}
-	fmt.Printf("Username: %s\n", r.Form.Get("username"))
+	form := "username=john"
+	req := httptest.NewRequest("POST", "/", strings.NewReader(form))
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	req.ParseForm()
+	fmt.Printf("Username: %s\n", req.Form.Get("username"))
 }

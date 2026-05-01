@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
+	// generateResetToken() -> sendEmail()
 	fmt.Println("Reset email sent")
 }

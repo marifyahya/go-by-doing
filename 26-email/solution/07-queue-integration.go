@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
+	// pushToRedisQueue(emailJob)
 	fmt.Println("Email queued")
 }

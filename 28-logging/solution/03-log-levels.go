@@ -1,9 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func logMessage(level string, msg string) {
+	fmt.Printf("[%s] %s\n", level, msg)
+}
 
 func main() {
-	fmt.Println("[DEBUG] debug message")
-	fmt.Println("[INFO] info message")
-	fmt.Println("[ERROR] error message")
+	logMessage("DEBUG", "debug message")
+	logMessage("INFO", "info message")
+	logMessage("ERROR", "error message")
 }

@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"os"
+)
 
 func main() {
-	fmt.Println("APP: Message")
+	logger := log.New(os.Stdout, "APP: ", 0)
+	logger.Println("Message")
 }

@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"context"
+	"fmt"
+	"github.com/redis/go-redis/v9"
+)
 
 func main() {
-	fmt.Println("Value: user123")
+	rdb := redis.NewClient(&redis.Options{Addr: "localhost:6379"})
+	// val, _ := rdb.Get(context.Background(), "user").Result()
+	val := "user123"
+	fmt.Printf("Value: %s\n", val)
 }

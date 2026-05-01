@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Retrying job")
+	success := false
+	if !success {
+		fmt.Println("Retrying job")
+		// LPush(jobs, failedJob)
+	}
 }

@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"net/http"
+	"net/http/httptest"
 )
 
 func main() {
-	r, _ := http.NewRequest("GET", "/users?name=john", nil)
-	fmt.Printf("Path: %s\n", r.URL.Path)
-	fmt.Printf("Query: %s\n", r.URL.RawQuery)
+	req := httptest.NewRequest("GET", "/users?name=john", nil)
+	fmt.Printf("Path: %s\n", req.URL.Path)
+	fmt.Printf("Query: %s\n", req.URL.RawQuery)
 }

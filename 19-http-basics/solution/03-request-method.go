@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"net/http/httptest"
 )
 
 func main() {
-	r, _ := http.NewRequest("GET", "/", nil)
-	fmt.Printf("Method: %s\n", r.Method)
+	req := httptest.NewRequest("GET", "/", nil)
+	fmt.Printf("Method: %s\n", req.Method)
 }

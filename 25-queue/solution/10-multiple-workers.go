@@ -1,8 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
+
+func worker(id int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Printf("Worker %d processing\n", id)
+}
 
 func main() {
-	fmt.Println("Worker 1 processing")
-	fmt.Println("Worker 2 processing")
+	var wg sync.WaitGroup
+	wg.Add(2)
+	go worker(1, &wg)
+	go worker(2, &wg)
+	wg.Wait()
 }

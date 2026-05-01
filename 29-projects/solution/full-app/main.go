@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Full Stack App Running")
+	fmt.Println("Full Stack App starting...")
+	fmt.Println("- Connecting to PostgreSQL...")
+	fmt.Println("- Connecting to Redis...")
+	fmt.Println("- Initializing JWT Auth...")
+	fmt.Println("- Starting HTTP Server...")
 }

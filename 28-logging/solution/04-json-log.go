@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 func main() {
-	fmt.Println(`{"level":"info","message":"request","ip":"127.0.0.1"}`)
+	log := map[string]string{
+		"level":   "info",
+		"message": "request",
+		"ip":      "127.0.0.1",
+	}
+	data, _ := json.Marshal(log)
+	fmt.Println(string(data))
 }

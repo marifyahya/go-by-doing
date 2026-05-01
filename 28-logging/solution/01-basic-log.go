@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"os"
+)
 
 func main() {
-	fmt.Println("2024/01/01 12:00:00 INFO Starting application")
+	l := log.New(os.Stdout, "", 0)
+	l.Println("2024/01/01 12:00:00 INFO Starting application")
 }

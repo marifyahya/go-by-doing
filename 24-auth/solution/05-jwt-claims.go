@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/golang-jwt/jwt/v5"
+)
+
+type MyClaims struct {
+	UserID int `json:"userID"`
+	jwt.RegisteredClaims
+}
 
 func main() {
-	fmt.Println("UserID: 123")
+	claims := MyClaims{UserID: 123}
+	fmt.Printf("UserID: %d\n", claims.UserID)
 }

@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Email job processed")
+	jobType := "email"
+	if jobType == "email" {
+		fmt.Println("Email job processed")
+	}
 }

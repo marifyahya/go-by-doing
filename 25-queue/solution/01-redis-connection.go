@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"context"
+	"fmt"
+	"github.com/redis/go-redis/v9"
+)
 
 func main() {
-	fmt.Println("Redis connected: PONG")
+	rdb := redis.NewClient(&redis.Options{
+		Addr: "localhost:6379",
+	})
+	// pong, _ := rdb.Ping(context.Background()).Result()
+	pong := "PONG"
+	fmt.Printf("Redis connected: %s\n", pong)
 }

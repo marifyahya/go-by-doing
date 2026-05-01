@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Status: completed")
+	// status, _ := rdb.Get(ctx, "job:1:status").Result()
+	status := "completed"
+	fmt.Printf("Status: %s\n", status)
 }

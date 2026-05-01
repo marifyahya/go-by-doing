@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http/httptest"
+)
 
 func main() {
-	fmt.Println("Response sent")
+	rr := httptest.NewRecorder()
+	rr.Write([]byte("Response sent"))
+	fmt.Println(rr.Body.String())
 }

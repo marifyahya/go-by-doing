@@ -10,8 +10,8 @@ type User struct {
 }
 
 func main() {
-	data := []byte(`{"name":"Alice"}`)
+	data := `{"name":"Alice"}`
 	var u User
-	json.Unmarshal(data, &u)
+	json.Unmarshal([]byte(data), &u)
 	fmt.Println(u.Name)
 }

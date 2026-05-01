@@ -7,6 +7,6 @@ import (
 
 func main() {
 	mux := http.NewServeMux()
-	_ = mux
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {})
 	fmt.Println("Routes registered")
 }

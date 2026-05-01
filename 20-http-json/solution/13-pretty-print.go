@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(`{
-  "name": "Alice"
-}`)
+	u := map[string]string{"name": "Alice"}
+	data, _ := json.MarshalIndent(u, "", "  ")
+	fmt.Println(string(data))
 }

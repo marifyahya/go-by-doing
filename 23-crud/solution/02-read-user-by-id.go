@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"database/sql"
+	"fmt"
+)
 
 func main() {
-	fmt.Println("User: Alice, Email: alice@test.com")
+	var name, email string
+	// db.QueryRow("SELECT name, email FROM users WHERE id = $1", 1).Scan(&name, &email)
+	name, email = "Alice", "alice@test.com"
+	fmt.Printf("User: %s, Email: %s\n", name, email)
 }

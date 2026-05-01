@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("user:1:name")
+	userID := 1
+	key := fmt.Sprintf("user:%d:name", userID)
+	fmt.Println(key)
 }

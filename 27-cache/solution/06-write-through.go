@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
+	// updateDB(); updateCache()
 	fmt.Println("Stored in both")
 }

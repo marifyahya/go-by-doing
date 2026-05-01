@@ -6,8 +6,10 @@ import (
 )
 
 func main() {
-	p := &sync.Pool{
-		New: func() interface{} { return "Pooled resource used" },
+	var pool = &sync.Pool{
+		New: func() interface{} { return "resource" },
 	}
-	fmt.Println(p.Get())
+	res := pool.Get()
+	fmt.Printf("Pooled %s used\n", res)
+	pool.Put(res)
 }

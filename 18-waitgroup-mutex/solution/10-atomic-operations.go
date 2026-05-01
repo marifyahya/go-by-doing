@@ -2,13 +2,20 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"sync/atomic"
 )
 
 func main() {
-	var count int64
+	var counter int64
+	var wg sync.WaitGroup
 	for i := 0; i < 1000; i++ {
-		atomic.AddInt64(&count, 1)
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			atomic.AddInt64(&counter, 1)
+		}()
 	}
-	fmt.Printf("Value: %d\n", atomic.LoadInt64(&count))
+	wg.Wait()
+	fmt.Printf("Value: %d\n", counter)
 }

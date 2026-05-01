@@ -7,5 +7,8 @@ import (
 
 func main() {
 	fmt.Println("Server running on :8080")
+	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	// 	fmt.Fprint(w, "Hello")
+	// })
 	// http.ListenAndServe(":8080", nil)
 }

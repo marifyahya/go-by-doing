@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"golang.org/x/crypto/bcrypt"
+)
 
 func main() {
-	fmt.Println("User registered: alice")
+	username := "alice"
+	password := "secret"
+	hash, _ := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	// saveToDB(username, hash)
+	_ = hash
+	fmt.Printf("User registered: %s\n", username)
 }

@@ -6,19 +6,18 @@ import (
 )
 
 func main() {
-	var count int
 	var mu sync.Mutex
+	counter := 0
 	var wg sync.WaitGroup
-
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
 			mu.Lock()
-			count++
-			mu.Unlock()
+			defer mu.Unlock()
+			counter++
 		}()
 	}
 	wg.Wait()
-	fmt.Printf("Final: %d\n", count)
+	fmt.Printf("Final: %d\n", counter)
 }

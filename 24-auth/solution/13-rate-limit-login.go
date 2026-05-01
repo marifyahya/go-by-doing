@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Too many attempts")
+	attempts := 6
+	if attempts > 5 {
+		fmt.Println("Too many attempts")
+	}
 }

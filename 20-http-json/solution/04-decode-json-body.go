@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
+	"net/http/httptest"
 	"strings"
 )
 
@@ -11,8 +13,9 @@ type User struct {
 }
 
 func main() {
-	body := strings.NewReader(`{"name":"Alice"}`)
+	body := `{"name":"Alice"}`
+	req := httptest.NewRequest("POST", "/", strings.NewReader(body))
 	var u User
-	json.NewDecoder(body).Decode(&u)
+	json.NewDecoder(req.Body).Decode(&u)
 	fmt.Printf("Decoded: %s\n", u.Name)
 }

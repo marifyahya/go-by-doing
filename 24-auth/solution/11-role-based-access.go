@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Admin access granted")
+	role := "admin"
+	if role == "admin" {
+		fmt.Println("Admin access granted")
+	}
 }

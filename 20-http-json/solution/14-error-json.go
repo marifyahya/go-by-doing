@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	res := map[string]string{"error": "message"}
-	data, _ := json.Marshal(res)
+	errLog := map[string]string{"error": "message"}
+	data, _ := json.Marshal(errLog)
 	fmt.Println(string(data))
 }

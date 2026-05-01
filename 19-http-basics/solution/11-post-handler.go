@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"net/http/httptest"
 )
 
 func main() {
-	r, _ := http.NewRequest("POST", "/", nil)
-	if r.Method == "POST" {
+	req := httptest.NewRequest("POST", "/", nil)
+	if req.Method == "POST" {
 		fmt.Println("Data processed")
 	}
 }

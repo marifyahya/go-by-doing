@@ -3,11 +3,14 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"net/http/httptest"
 	"strings"
 )
 
 func main() {
-	r, _ := http.NewRequest("GET", "/users/123", nil)
-	parts := strings.Split(r.URL.Path, "/")
-	fmt.Printf("User ID: %s\n", parts[2])
+	req := httptest.NewRequest("GET", "/users/123", nil)
+	parts := strings.Split(req.URL.Path, "/")
+	if len(parts) > 2 {
+		fmt.Printf("User ID: %s\n", parts[2])
+	}
 }

@@ -3,10 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
+	"net/http/httptest"
 )
 
 func main() {
-	res := map[string]string{"message": "success"}
-	data, _ := json.Marshal(res)
-	fmt.Println(string(data))
+	w := httptest.NewRecorder()
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]string{"message": "success"})
+	fmt.Print(w.Body.String())
 }

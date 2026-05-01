@@ -6,10 +6,12 @@ import (
 )
 
 func main() {
-	m := make(map[string]int)
 	var mu sync.Mutex
+	m := make(map[string]int)
+	
 	mu.Lock()
 	m["key"] = 1
 	mu.Unlock()
+	
 	fmt.Println("Safe map operations")
 }

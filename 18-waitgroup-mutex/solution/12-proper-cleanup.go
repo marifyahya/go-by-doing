@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
 func main() {
+	var mu sync.Mutex
+	mu.Lock()
+	defer mu.Unlock()
 	fmt.Println("Resources cleaned")
 }
