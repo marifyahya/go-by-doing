@@ -69,9 +69,13 @@ Write a program that prints your initials in large letters.
 
 **Expected output (example):**
 ```
-MMM
- MMM
- MMM
+M     M   AAA   Y     Y
+MM   MM  A   A   Y   Y 
+M M M M  A   A    Y Y  
+M  M  M  AAAAA     Y   
+M     M  A   A     Y   
+M     M  A   A     Y   
+M     M  A   A     Y   
 ```
 
 **Hint:** Use Println with spaces.
